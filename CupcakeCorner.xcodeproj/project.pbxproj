@@ -15,6 +15,7 @@
 		7231A7A826A48AA700C4FC44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7231A7A626A48AA700C4FC44 /* LaunchScreen.storyboard */; };
 		72D2268326A5CECF0056B0BE /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2268226A5CECF0056B0BE /* Order.swift */; };
 		72D2268526A5D6E60056B0BE /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2268426A5D6E60056B0BE /* AddressView.swift */; };
+		72D2268726A5D8520056B0BE /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2268626A5D8520056B0BE /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7231A7A926A48AA700C4FC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72D2268226A5CECF0056B0BE /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		72D2268426A5D6E60056B0BE /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		72D2268626A5D8520056B0BE /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				7231A79D26A48AA500C4FC44 /* SceneDelegate.swift */,
 				7231A79F26A48AA500C4FC44 /* ContentView.swift */,
 				72D2268426A5D6E60056B0BE /* AddressView.swift */,
+				72D2268626A5D8520056B0BE /* CheckoutView.swift */,
 				72D2268226A5CECF0056B0BE /* Order.swift */,
 				7231A7A126A48AA700C4FC44 /* Assets.xcassets */,
 				7231A7A626A48AA700C4FC44 /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 			files = (
 				7231A79C26A48AA500C4FC44 /* AppDelegate.swift in Sources */,
 				7231A79E26A48AA500C4FC44 /* SceneDelegate.swift in Sources */,
+				72D2268726A5D8520056B0BE /* CheckoutView.swift in Sources */,
 				72D2268326A5CECF0056B0BE /* Order.swift in Sources */,
 				7231A7A026A48AA500C4FC44 /* ContentView.swift in Sources */,
 				72D2268526A5D6E60056B0BE /* AddressView.swift in Sources */,
