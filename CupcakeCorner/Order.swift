@@ -42,7 +42,7 @@ class Order: ObservableObject, Codable {
         }
         return cost
     }
-    
+    //This is the init that will instantiate the new instance of this class when we decode the encoded data.
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         type = try container.decode(Int.self, forKey: .type)
@@ -56,14 +56,20 @@ class Order: ObservableObject, Codable {
         zip = try container.decode(String.self, forKey: .zip)
     
     }
+    //Default init is defined that will be called when instance is created with no parameters.
     init() {
         
     }
+    // CodingKeys enum is created that conforms to Codingkey Protocol.
+    //CodingKey protocol is the one that creates a custom key to encode-decode the @Published properties manually
     enum CodingKeys: CodingKey {
         case type, quantity, specialRequestEnabled, extraFrosting, addSprinkles, name, streetAddress, city, zip
     }
+    // this method will be called whenever we are encoding the instance of this class.
     func encode(to encoder: Encoder) throws {
+        // container is created with a given enum Object.
         var container = encoder.container(keyedBy: CodingKeys.self)
+        // we will use this container to encode individual variables with its assigned CodingKeys.
         try container.encode(type, forKey: .type)
         try container.encode(quantity, forKey: .quantity)
         try container.encode(specialRequestEnabled, forKey: .specialRequestEnabled)
