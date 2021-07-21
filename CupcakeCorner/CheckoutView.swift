@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @ObservedObject var order: Order
+    @ObservedObject var model = Model()
+   
     @State var confirmationMessage = ""
     @State var showingConfirmation = false
     var body: some View {
@@ -19,7 +20,7 @@ struct CheckoutView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width:geometryProxy.size.width)
-                    Text("Your total is $\(self.order.cost, specifier: "%.2f")")
+                    Text("Your total is $\(self.model.order.cost, specifier: "%.2f")")
                         .font(.title)
                     Button("Place Order") {
                         self.placeOrder()
@@ -34,7 +35,7 @@ struct CheckoutView: View {
     // calling this method on button click.
     func placeOrder() {
         //encode the given Order instance to JSON format.
-        guard let encoded = try? JSONEncoder().encode(order) else {
+        guard let encoded = try? JSONEncoder().encode(model.order) else {
             print("failed to encode order")
             return
         }
@@ -50,7 +51,8 @@ struct CheckoutView: View {
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             //if the response is OK we will get data.
             guard let data = data else {
-                print("No data in response: \(error?.localizedDescription ?? "Unknown error").")
+                self.confirmationMessage = "Error: Connection failed. Please check the internet connection."
+                self.showingConfirmation = true
                 return
             }
             // decode the given data back into Order instance format.
@@ -60,7 +62,7 @@ struct CheckoutView: View {
                 self.showingConfirmation = true
             }
             else {
-                print("Invalid response from server.")
+                     print("Invalid response from server.")
             }
         }.resume()
     }
@@ -68,6 +70,6 @@ struct CheckoutView: View {
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView(order: Order())
+        CheckoutView(model: Model())
     }
 }
