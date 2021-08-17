@@ -20,6 +20,7 @@ struct CheckoutView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width:geometryProxy.size.width)
+                        .accessibility(hidden: true)
                     Text("Your total is $\(self.model.order.cost, specifier: "%.2f")")
                         .font(.title)
                     Button("Place Order") {
